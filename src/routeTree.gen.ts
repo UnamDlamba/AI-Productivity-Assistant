@@ -10,9 +10,14 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StrategyRouteImport } from './routes/strategy'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ProductivityRouteImport } from './routes/productivity'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ContentRouteImport } from './routes/content'
+import { Route as ClientsRouteImport } from './routes/clients'
+import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsSlugRouteImport } from './routes/tools.$slug'
@@ -21,6 +26,21 @@ import { Route as ApiChatRouteImport } from './routes/api/chat'
 const StrategyRoute = StrategyRouteImport.update({
   id: '/strategy',
   path: '/strategy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProductivityRoute = ProductivityRouteImport.update({
@@ -36,6 +56,16 @@ const DashboardRoute = DashboardRouteImport.update({
 const ContentRoute = ContentRouteImport.update({
   id: '/content',
   path: '/content',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientsRoute = ClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AssistantRoute = AssistantRouteImport.update({
@@ -62,9 +92,14 @@ const ApiChatRoute = ApiChatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/assistant': typeof AssistantRoute
+  '/calendar': typeof CalendarRoute
+  '/clients': typeof ClientsRoute
   '/content': typeof ContentRoute
   '/dashboard': typeof DashboardRoute
   '/productivity': typeof ProductivityRoute
+  '/projects': typeof ProjectsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
   '/strategy': typeof StrategyRoute
   '/api/chat': typeof ApiChatRoute
   '/tools/$slug': typeof ToolsSlugRoute
@@ -72,9 +107,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/assistant': typeof AssistantRoute
+  '/calendar': typeof CalendarRoute
+  '/clients': typeof ClientsRoute
   '/content': typeof ContentRoute
   '/dashboard': typeof DashboardRoute
   '/productivity': typeof ProductivityRoute
+  '/projects': typeof ProjectsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
   '/strategy': typeof StrategyRoute
   '/api/chat': typeof ApiChatRoute
   '/tools/$slug': typeof ToolsSlugRoute
@@ -83,9 +123,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/assistant': typeof AssistantRoute
+  '/calendar': typeof CalendarRoute
+  '/clients': typeof ClientsRoute
   '/content': typeof ContentRoute
   '/dashboard': typeof DashboardRoute
   '/productivity': typeof ProductivityRoute
+  '/projects': typeof ProjectsRoute
+  '/reports': typeof ReportsRoute
+  '/settings': typeof SettingsRoute
   '/strategy': typeof StrategyRoute
   '/api/chat': typeof ApiChatRoute
   '/tools/$slug': typeof ToolsSlugRoute
@@ -95,9 +140,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/assistant'
+    | '/calendar'
+    | '/clients'
     | '/content'
     | '/dashboard'
     | '/productivity'
+    | '/projects'
+    | '/reports'
+    | '/settings'
     | '/strategy'
     | '/api/chat'
     | '/tools/$slug'
@@ -105,9 +155,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/assistant'
+    | '/calendar'
+    | '/clients'
     | '/content'
     | '/dashboard'
     | '/productivity'
+    | '/projects'
+    | '/reports'
+    | '/settings'
     | '/strategy'
     | '/api/chat'
     | '/tools/$slug'
@@ -115,9 +170,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/assistant'
+    | '/calendar'
+    | '/clients'
     | '/content'
     | '/dashboard'
     | '/productivity'
+    | '/projects'
+    | '/reports'
+    | '/settings'
     | '/strategy'
     | '/api/chat'
     | '/tools/$slug'
@@ -126,9 +186,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AssistantRoute: typeof AssistantRoute
+  CalendarRoute: typeof CalendarRoute
+  ClientsRoute: typeof ClientsRoute
   ContentRoute: typeof ContentRoute
   DashboardRoute: typeof DashboardRoute
   ProductivityRoute: typeof ProductivityRoute
+  ProjectsRoute: typeof ProjectsRoute
+  ReportsRoute: typeof ReportsRoute
+  SettingsRoute: typeof SettingsRoute
   StrategyRoute: typeof StrategyRoute
   ApiChatRoute: typeof ApiChatRoute
   ToolsSlugRoute: typeof ToolsSlugRoute
@@ -141,6 +206,27 @@ declare module '@tanstack/react-router' {
       path: '/strategy'
       fullPath: '/strategy'
       preLoaderRoute: typeof StrategyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/productivity': {
@@ -162,6 +248,20 @@ declare module '@tanstack/react-router' {
       path: '/content'
       fullPath: '/content'
       preLoaderRoute: typeof ContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clients': {
+      id: '/clients'
+      path: '/clients'
+      fullPath: '/clients'
+      preLoaderRoute: typeof ClientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/assistant': {
@@ -198,9 +298,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AssistantRoute: AssistantRoute,
+  CalendarRoute: CalendarRoute,
+  ClientsRoute: ClientsRoute,
   ContentRoute: ContentRoute,
   DashboardRoute: DashboardRoute,
   ProductivityRoute: ProductivityRoute,
+  ProjectsRoute: ProjectsRoute,
+  ReportsRoute: ReportsRoute,
+  SettingsRoute: SettingsRoute,
   StrategyRoute: StrategyRoute,
   ApiChatRoute: ApiChatRoute,
   ToolsSlugRoute: ToolsSlugRoute,
