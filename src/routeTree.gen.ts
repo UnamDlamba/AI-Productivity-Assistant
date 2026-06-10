@@ -9,14 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StrategyRouteImport } from './routes/strategy'
+import { Route as ProductivityRouteImport } from './routes/productivity'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ContentRouteImport } from './routes/content'
+import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ToolsSlugRouteImport } from './routes/tools.$slug'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
+const StrategyRoute = StrategyRouteImport.update({
+  id: '/strategy',
+  path: '/strategy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductivityRoute = ProductivityRouteImport.update({
+  id: '/productivity',
+  path: '/productivity',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContentRoute = ContentRouteImport.update({
+  id: '/content',
+  path: '/content',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssistantRoute = AssistantRouteImport.update({
+  id: '/assistant',
+  path: '/assistant',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,45 +61,114 @@ const ApiChatRoute = ApiChatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assistant': typeof AssistantRoute
+  '/content': typeof ContentRoute
   '/dashboard': typeof DashboardRoute
+  '/productivity': typeof ProductivityRoute
+  '/strategy': typeof StrategyRoute
   '/api/chat': typeof ApiChatRoute
   '/tools/$slug': typeof ToolsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assistant': typeof AssistantRoute
+  '/content': typeof ContentRoute
   '/dashboard': typeof DashboardRoute
+  '/productivity': typeof ProductivityRoute
+  '/strategy': typeof StrategyRoute
   '/api/chat': typeof ApiChatRoute
   '/tools/$slug': typeof ToolsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/assistant': typeof AssistantRoute
+  '/content': typeof ContentRoute
   '/dashboard': typeof DashboardRoute
+  '/productivity': typeof ProductivityRoute
+  '/strategy': typeof StrategyRoute
   '/api/chat': typeof ApiChatRoute
   '/tools/$slug': typeof ToolsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/api/chat' | '/tools/$slug'
+  fullPaths:
+    | '/'
+    | '/assistant'
+    | '/content'
+    | '/dashboard'
+    | '/productivity'
+    | '/strategy'
+    | '/api/chat'
+    | '/tools/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/api/chat' | '/tools/$slug'
-  id: '__root__' | '/' | '/dashboard' | '/api/chat' | '/tools/$slug'
+  to:
+    | '/'
+    | '/assistant'
+    | '/content'
+    | '/dashboard'
+    | '/productivity'
+    | '/strategy'
+    | '/api/chat'
+    | '/tools/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/assistant'
+    | '/content'
+    | '/dashboard'
+    | '/productivity'
+    | '/strategy'
+    | '/api/chat'
+    | '/tools/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AssistantRoute: typeof AssistantRoute
+  ContentRoute: typeof ContentRoute
   DashboardRoute: typeof DashboardRoute
+  ProductivityRoute: typeof ProductivityRoute
+  StrategyRoute: typeof StrategyRoute
   ApiChatRoute: typeof ApiChatRoute
   ToolsSlugRoute: typeof ToolsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/strategy': {
+      id: '/strategy'
+      path: '/strategy'
+      fullPath: '/strategy'
+      preLoaderRoute: typeof StrategyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/productivity': {
+      id: '/productivity'
+      path: '/productivity'
+      fullPath: '/productivity'
+      preLoaderRoute: typeof ProductivityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/content': {
+      id: '/content'
+      path: '/content'
+      fullPath: '/content'
+      preLoaderRoute: typeof ContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assistant': {
+      id: '/assistant'
+      path: '/assistant'
+      fullPath: '/assistant'
+      preLoaderRoute: typeof AssistantRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,7 +197,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AssistantRoute: AssistantRoute,
+  ContentRoute: ContentRoute,
   DashboardRoute: DashboardRoute,
+  ProductivityRoute: ProductivityRoute,
+  StrategyRoute: StrategyRoute,
   ApiChatRoute: ApiChatRoute,
   ToolsSlugRoute: ToolsSlugRoute,
 }
