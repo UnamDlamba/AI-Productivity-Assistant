@@ -18,7 +18,7 @@ function AssistantPage() {
 
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({ api: "/api/chat" }),
-    onError: (e) => toast.error(e.message || "Chat error"),
+    onError: (e: Error) => toast.error(e.message || "Chat error"),
   });
 
   const loading = status === "submitted" || status === "streaming";
