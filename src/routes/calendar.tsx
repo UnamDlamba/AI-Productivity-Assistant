@@ -11,9 +11,10 @@ function CalendarPage() {
   const month = date.getMonth();
   const first = new Date(year, month, 1).getDay();
   const days = new Date(year, month + 1, 0).getDate();
-  const cells = Array.from({ length: first }, () => null).concat(
-    Array.from({ length: days }, (_, i) => i + 1) as (number | null)[],
-  );
+  const cells: (number | null)[] = [
+    ...Array.from({ length: first }, () => null as number | null),
+    ...Array.from({ length: days }, (_, i) => i + 1),
+  ];
   const events: Record<number, string[]> = { 5: ["IG Reel"], 12: ["Email blast"], 18: ["Launch"], 24: ["Webinar"] };
   const monthName = date.toLocaleString("en", { month: "long" });
   return (
