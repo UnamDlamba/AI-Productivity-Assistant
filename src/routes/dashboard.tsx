@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
-import { TOOLS, STATIC_TOOLS, allToolCards } from "@/lib/tools-config";
+import { TOOLS, allToolCards } from "@/lib/tools-config";
 
 export const Route = createFileRoute("/dashboard")({
   head: () => ({
