@@ -86,14 +86,14 @@ function kicker(s, text, x, y, color = C.red) {
 
   // Right-side illustration: stacked app cards
   blob(s, 10.1, 2.6, 2.6, 1.4, C.purple, { r: 0.3 });
-  s.addText("🤖", { x: 10.2, y: 2.7, w: 0.7, h: 0.7, fontSize: 28 });
+  s.addText("\u25C9", { x: 10.2, y: 2.7, w: 0.7, h: 0.7, fontSize: 28 });
   s.addText("AI Assistant", { x: 10.9, y: 2.75, w: 1.7, h: 0.3, fontFace: FB, fontSize: 11, bold: true, color: C.ink });
   s.addText("Always on", { x: 10.9, y: 3.05, w: 1.7, h: 0.3, fontFace: FB, fontSize: 9, color: C.inkSoft });
   blob(s, 10.1, 3.45, 2.6, 0.5, C.white, { r: 0.2 });
   blob(s, 10.2, 3.55, 1.6, 0.3, C.pinkDk, { r: 0.15 });
 
   blob(s, 10.1, 4.2, 2.6, 1.4, C.yellow, { r: 0.3 });
-  s.addText("📊", { x: 10.2, y: 4.3, w: 0.7, h: 0.7, fontSize: 26 });
+  s.addText("\u25A4", { x: 10.2, y: 4.3, w: 0.7, h: 0.7, fontSize: 26 });
   s.addText("Content Calendar", { x: 10.9, y: 4.35, w: 1.7, h: 0.3, fontFace: FB, fontSize: 11, bold: true, color: C.ink });
   s.addText("12 scheduled", { x: 10.9, y: 4.65, w: 1.7, h: 0.3, fontFace: FB, fontSize: 9, color: C.inkSoft });
   for (let i = 0; i < 4; i++) blob(s, 10.2 + i * 0.6, 5.05, 0.5, 0.45, C.white, { r: 0.1 });
@@ -115,9 +115,9 @@ function kicker(s, text, x, y, color = C.red) {
   s.addText("Marketing teams are\ndrowning in busywork.", { x: 0.7, y: 1.1, w: 10, h: 1.8, fontFace: FH, fontSize: 44, bold: true, color: C.ink });
 
   const items = [
-    { icon: "⏳", t: "60% of time lost", d: "Repetitive admin tasks eat the workday.", c: C.white },
-    { icon: "📝", t: "Blank page paralysis", d: "Captions, emails, briefs — stuck at the start.", c: C.yellow },
-    { icon: "📅", t: "Scattered workflows", d: "Calendars, clients and content live in 7 tabs.", c: C.blue },
+    { icon: "\u29D6", t: "60% of time lost", d: "Repetitive admin tasks eat the workday.", c: C.white },
+    { icon: "\u270E", t: "Blank page paralysis", d: "Captions, emails, briefs — stuck at the start.", c: C.yellow },
+    { icon: "\u25A4", t: "Scattered workflows", d: "Calendars, clients and content live in 7 tabs.", c: C.blue },
   ];
   items.forEach((it, i) => {
     const x = 0.7 + i * 4.1;
@@ -173,10 +173,10 @@ function kicker(s, text, x, y, color = C.red) {
   s.addText("Move faster on the\nwork that matters.", { x: 0.7, y: 1.1, w: 11, h: 1.8, fontFace: FH, fontSize: 40, bold: true, color: C.ink });
 
   const tools = [
-    { icon: "📧", t: "Email Generator", d: "Polished emails in seconds.", c: C.pink },
-    { icon: "📝", t: "Meeting Summarizer", d: "Notes into clean action items.", c: C.blue },
-    { icon: "📅", t: "Task Planner", d: "Structured daily schedules.", c: C.yellow },
-    { icon: "🔍", t: "Research Assistant", d: "Insights on any topic, fast.", c: C.green },
+    { icon: "\u2709", t: "Email Generator", d: "Polished emails in seconds.", c: C.pink },
+    { icon: "\u270E", t: "Meeting Summarizer", d: "Notes into clean action items.", c: C.blue },
+    { icon: "\u25A4", t: "Task Planner", d: "Structured daily schedules.", c: C.yellow },
+    { icon: "\u26B2", t: "Research Assistant", d: "Insights on any topic, fast.", c: C.green },
   ];
   tools.forEach((t, i) => {
     const x = 0.7 + i * 3.1;
@@ -200,11 +200,11 @@ function kicker(s, text, x, y, color = C.red) {
   s.addText("From caption to calendar\nin a single flow.", { x: 0.7, y: 1.1, w: 11, h: 1.8, fontFace: FH, fontSize: 40, bold: true, color: C.ink });
 
   const tiles = [
-    { icon: "📱", t: "Caption Generator", c: C.pink },
-    { icon: "#️⃣", t: "Hashtag Generator", c: C.blue },
-    { icon: "💡", t: "Content Ideas", c: C.purple },
-    { icon: "📣", t: "Campaign Planner", c: C.green },
-    { icon: "🗓", t: "Content Calendar", c: C.white },
+    { icon: "\u25AF", t: "Caption Generator", c: C.pink },
+    { icon: "#", t: "Hashtag Generator", c: C.blue },
+    { icon: "\u2600", t: "Content Ideas", c: C.purple },
+    { icon: "\u25C8", t: "Campaign Planner", c: C.green },
+    { icon: "\u29C9", t: "Content Calendar", c: C.white },
   ];
   // 5 tiles in a row
   tiles.forEach((t, i) => {
@@ -283,9 +283,9 @@ function kicker(s, text, x, y, color = C.red) {
 
   const items = [
     { icon: "✓", t: "Verify information", d: "Cross-check AI output before publishing.", c: C.pink },
-    { icon: "👁", t: "Review outputs", d: "Read every draft with a critical eye.", c: C.blue },
-    { icon: "🤝", t: "Human oversight", d: "People stay in charge of decisions.", c: C.yellow },
-    { icon: "⚖", t: "Ethical AI use", d: "Honest, inclusive, on-brand always.", c: C.green },
+    { icon: "\u25C9", t: "Review outputs", d: "Read every draft with a critical eye.", c: C.blue },
+    { icon: "\u2698", t: "Human oversight", d: "People stay in charge of decisions.", c: C.yellow },
+    { icon: "\u2696", t: "Ethical AI use", d: "Honest, inclusive, on-brand always.", c: C.green },
   ];
   items.forEach((it, i) => {
     const col = i % 2, row = Math.floor(i / 2);
