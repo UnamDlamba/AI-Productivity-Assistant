@@ -169,7 +169,7 @@ function kicker(s, text, x, y, color = C.red) {
   circle(s, 11.5, -1.5, 4, C.purpleDk);
   circle(s, -1, 6, 3, C.pink);
 
-  kicker(s, "PRODUCTIVITY TOOLS");
+  kicker(s, "PRODUCTIVITY TOOLS", 0.7, 0.7);
   s.addText("Move faster on the\nwork that matters.", { x: 0.7, y: 1.1, w: 11, h: 1.8, fontFace: FH, fontSize: 40, bold: true, color: C.ink });
 
   const tools = [
@@ -196,11 +196,11 @@ function kicker(s, text, x, y, color = C.red) {
   circle(s, -2, -1, 4, C.yellowDk);
   circle(s, 12, 5.5, 3.5, C.pink);
 
-  kicker(s, "CONTENT TOOLS");
+  kicker(s, "CONTENT TOOLS", 0.7, 0.7);
   s.addText("From caption to calendar\nin a single flow.", { x: 0.7, y: 1.1, w: 11, h: 1.8, fontFace: FH, fontSize: 40, bold: true, color: C.ink });
 
   const tiles = [
-    { icon: "\u25AF", t: "Caption Generator", c: C.pink },
+    { icon: "\u275D", t: "Caption Generator", c: C.pink },
     { icon: "#", t: "Hashtag Generator", c: C.blue },
     { icon: "\u2600", t: "Content Ideas", c: C.purple },
     { icon: "\u25C8", t: "Campaign Planner", c: C.green },
@@ -228,7 +228,7 @@ function kicker(s, text, x, y, color = C.red) {
   circle(s, -1.5, 6, 3, C.greenDk);
   circle(s, 12, -1, 3, C.blue);
 
-  kicker(s, "PLATFORM FEATURES");
+  kicker(s, "PLATFORM FEATURES", 0.7, 0.7);
   s.addText("Everything connected\nin one workspace.", { x: 0.7, y: 1.1, w: 11, h: 1.8, fontFace: FH, fontSize: 40, bold: true, color: C.ink });
 
   // Mock dashboard
@@ -278,7 +278,7 @@ function kicker(s, text, x, y, color = C.red) {
   circle(s, 12, -1, 3.5, C.purple);
   circle(s, -2, 5, 4, C.pink);
 
-  kicker(s, "RESPONSIBLE AI");
+  kicker(s, "RESPONSIBLE AI", 0.7, 0.7);
   s.addText("AI works best\nwith you.", { x: 0.7, y: 1.1, w: 10, h: 1.8, fontFace: FH, fontSize: 44, bold: true, color: C.ink });
 
   const items = [
